@@ -4,10 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .box {
+        width: 400px;
+        height: 300px;
+        border: 2px solid red;
+        border-radius: 20px;
+        background-color: antiquewhite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+      }
+
+      .paint {
+        margin-top: 20px;
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+      }
+    </style>
   </head>
   <body>
-    <button onclick="clickMe()">Click Me</button>
-    <button onclick="count()">Count increase</button>
+    <button id="clickMeBtn">Click Me</button>
+    <button id="countBtn">Count increase</button>
+    <button id="turnOn">Turn On</button>
+    <button id="turnOff">Turn Off</button>
+    <div class="box">Hello World</div>
+
+    <div class="search">
+      <!--  -->
+      <input type="text" />
+      <button>Paint</button>
+    </div>
+
+    <div class="paint"></div>
     <script src="./event.js"></script>
   </body>
 </html>
