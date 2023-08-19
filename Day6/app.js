@@ -28,20 +28,32 @@
 // LOCALSTORAGE
 
 // lữu dữ liệu vào trong localStorage ta dùng hàm: setItem()
-localStorage.setItem("tên lớp", "JSA26");
-localStorage.setItem("myName", "Danh Phương");
+// localStorage.setItem("tên lớp", "JSA26");
+// localStorage.setItem("myName", "Danh Phương");
 
-// lấy dữ liệu từ localStorage
+// // lấy dữ liệu từ localStorage
 
-let outPut = localStorage.getItem("tên lớp");
-console.log(outPut);
+// let outPut = localStorage.getItem("tên lớp");
+// console.log(outPut);
 
-let a = document.getElementById("myButton");
-a.addEventListener("click", function () {
-  localStorage.clear();
-});
+// let a = document.getElementById("myButton");
+// a.addEventListener("click", function () {
+//   localStorage.clear();
+// });
 
 // Xóa dữ liệu dự theo key
 // localStorage.removeItem("tên lớp");
 
 // Xóa hết dữ liệu
+
+// Bài 3
+
+let departure_name = document.getElementById("departure_name");
+let departure_point = document.getElementById("departure_point");
+let addButton = document.getElementById("myButton");
+addButton.addEventListener("click", function () {
+  localStorage.setItem(departure_name.value, departure_point.value);
+
+  departure_name.value = "";
+  departure_point.value = "";
+});
