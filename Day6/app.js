@@ -5,7 +5,6 @@
 // Lấy 1 value từ input
 
 // let input = document.querySelector("#myInput");
-// let shapeBox = document.querySelector(".shape");
 // // let input = document.getElementById("myInput")
 
 // let a = document.getElementById("myButton");
@@ -51,9 +50,28 @@
 let departure_name = document.getElementById("departure_name");
 let departure_point = document.getElementById("departure_point");
 let addButton = document.getElementById("myButton");
+let shapeBox = document.querySelector(".shape");
+
 addButton.addEventListener("click", function () {
   localStorage.setItem(departure_name.value, departure_point.value);
 
   departure_name.value = "";
   departure_point.value = "";
 });
+const keys = Object.keys(localStorage);
+
+for (let i = 0; i < keys.length; i++) {
+  let newDiv = document.createElement("div");
+  let newB = document.createElement("b");
+  newB.innerText = `${keys[i]}: `;
+  let newSpan = document.createElement("span");
+  newSpan.innerText = localStorage.getItem(keys[i]);
+  newDiv.appendChild(newB);
+  newDiv.appendChild(newSpan);
+  shapeBox.appendChild(newDiv);
+}
+
+// console.log(keys);
+for (let i = 0; i < keys.length; i++) {
+  console.log(localStorage.getItem(keys[i]));
+}
