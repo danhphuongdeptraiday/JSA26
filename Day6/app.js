@@ -79,19 +79,35 @@ read.addEventListener("click", function () {
 //   console.log(localStorage.getItem(keys[i]));
 // }
 
-let listDeparture = [
-  { departure_name: "Ngành Kinh tế", departure_point: "29" },
-  { departure_name: "Ngành CNTT", departure_point: "27.8" },
-];
-
-// Chữa bài:
-localStorage.setItem("ListDeparture", JSON.stringify(listDeparture));
+let insertBtn = document.getElementById("addArray");
 
 // Lấy dữ liễu theo key: ListDeparture
 let getDepartureLocalStorage = JSON.parse(
   localStorage.getItem("ListDeparture")
 );
-console.log(getDepartureLocalStorage[1].departure_point);
+
+if (getDepartureLocalStorage == null) {
+  localStorage.setItem("ListDeparture", JSON.stringify([]));
+  location.reload();
+} else {
+  insertBtn.addEventListener("click", function () {
+    // thêm 1 đối tượng mới vào trong mảng listDeparture, value của thuộc tính departure_name và departure_point sẽ được lấy từ input người dùng
+    getDepartureLocalStorage.push({
+      departure_name: departure_name.value,
+      departure_point: departure_point.value,
+    });
+    localStorage.setItem(
+      "ListDeparture",
+      JSON.stringify(getDepartureLocalStorage)
+    );
+  });
+}
+
+// console.log(getDepartureLocalStorage);
+
+// Chữa bài:
+
+// console.log(getDepartureLocalStorage[1].departure_point);
 // Yêu cầu tiếp theo: lấy ra giá trị thứ departure_point của ngành CNTT
 
 // // khi lưu dữ liệu ở dạng mảng hoặc dạng đối tượng vào trong localStorage thì mình sử dụng JSON.stringify()
