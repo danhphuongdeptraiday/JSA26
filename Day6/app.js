@@ -51,27 +51,56 @@ let departure_name = document.getElementById("departure_name");
 let departure_point = document.getElementById("departure_point");
 let addButton = document.getElementById("myButton");
 let shapeBox = document.querySelector(".shape");
-
+let read = document.querySelector("#read");
 addButton.addEventListener("click", function () {
   localStorage.setItem(departure_name.value, departure_point.value);
 
   departure_name.value = "";
   departure_point.value = "";
+
+  location.reload();
 });
-const keys = Object.keys(localStorage);
 
-for (let i = 0; i < keys.length; i++) {
-  let newDiv = document.createElement("div");
-  let newB = document.createElement("b");
-  newB.innerText = `${keys[i]}: `;
-  let newSpan = document.createElement("span");
-  newSpan.innerText = localStorage.getItem(keys[i]);
-  newDiv.appendChild(newB);
-  newDiv.appendChild(newSpan);
-  shapeBox.appendChild(newDiv);
-}
-
+read.addEventListener("click", function () {
+  const keys = Object.keys(localStorage);
+  for (let i = 0; i < keys.length; i++) {
+    let newDiv = document.createElement("div");
+    let newB = document.createElement("b");
+    newB.innerText = `${keys[i]}: `;
+    let newSpan = document.createElement("span");
+    newSpan.innerText = localStorage.getItem(keys[i]);
+    newDiv.appendChild(newB);
+    newDiv.appendChild(newSpan);
+    shapeBox.appendChild(newDiv);
+  }
+});
 // console.log(keys);
-for (let i = 0; i < keys.length; i++) {
-  console.log(localStorage.getItem(keys[i]));
-}
+// for (let i = 0; i < keys.length; i++) {
+//   console.log(localStorage.getItem(keys[i]));
+// }
+
+let listDeparture = [
+  { departure_name: "Ngành Kinh tế", departure_point: "29" },
+  { departure_name: "Ngành CNTT", departure_point: "27.8" },
+];
+
+// Chữa bài:
+localStorage.setItem("ListDeparture", JSON.stringify(listDeparture));
+
+// Lấy dữ liễu theo key: ListDeparture
+let getDepartureLocalStorage = JSON.parse(
+  localStorage.getItem("ListDeparture")
+);
+console.log(getDepartureLocalStorage[1].departure_point);
+// Yêu cầu tiếp theo: lấy ra giá trị thứ departure_point của ngành CNTT
+
+// // khi lưu dữ liệu ở dạng mảng hoặc dạng đối tượng vào trong localStorage thì mình sử dụng JSON.stringify()
+// let object = { name: "phuong", age: 22 };
+// localStorage.setItem("đối tượng", JSON.stringify(object));
+// console.log(object);
+// console.log(object.name);
+
+// // khi lấy 1 dữ liệu đối tượng hoặc mảng đang tồn tại ở dạng string thì ta cần phải có 1 bước JSON.parse()
+// let t = localStorage.getItem("đối tượng");
+// console.log(t);
+// console.log(JSON.parse(t).age);

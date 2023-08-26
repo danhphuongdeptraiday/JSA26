@@ -26,13 +26,13 @@ let favor1 = "basketball";
 let favor2 = "tennis";
 let favor3 = "football";
 
-let listFavorSport = ["basketball", "tennis", "football"];
 // console.log(listFavorSport[0]);
 // listFavorSport.push("golf");
 // console.log(listFavorSport.pop());
 // để thêm 1 phần tử mới vào trong mảng ta dùng hàm push(value)
 // * value có thể là bất cứ giá trị nào
 
+// let listFavorSport = ["basketball", "tennis", "football"];
 // IN RA TẤT CẢ GIÁ TRỊ TRONG MẢNG (DÙNG VÒNG FOR)
 // for (let i = 0; i < listFavorSport.length; i++) {
 //   console.log(listFavorSport[i]);
