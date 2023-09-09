@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .user_found {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="name">Tên: </label>
+    <input type="text" id="name" />
+    <label for="age">Tuổi: </label>
+    <input type="text" id="age" />
+    <button id="insert">Insert</button>
+    <button id="read">Read</button>
+    <div class="shape"></div>
+
+    <div style="margin-top: 50px" class="find_user_contianer">
+      <input
+        type="text"
+        placeholder="Check user tồn tại chưa ? "
+        name=""
+        id="user_want_find"
+      />
+
+      <button id="find_user">Find User</button>
+    </div>
+
+    <div class="user_found">
+      <b>User: </b>
+      <span style="color: red">Not found</span>
+    </div>
+
+    <!-- <div>
+      <input
+        placeholder="Nhập tên người mà bận muốn thay đổi tuổi"
+        type="text"
+        name=""
+        id=""
+        width="500px"
+      />
+      <br />
+      <input
+        placeholder="cập nhật tuổi mới vào đây"
+        type="text"
+        name=""
+        id=""
+      />
+
+      <br />
+
+      <button>Change age</button>
+    </div> -->
+    <script src="day8.js"></script>
+  </body>
+</html>
